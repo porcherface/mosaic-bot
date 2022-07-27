@@ -10,6 +10,7 @@ class Target:
 		self.image = Image.open(filename)
 		self.res_x = res_x
 		self.res_y = res_y
+		self,size = res_y*res_x
 		self.resized = 	self.image.resize((res_x,res_y))
 
 	def show(self):
@@ -20,3 +21,4 @@ if __name__ == "__main__":
 
 	t = Target('/Users/saramilone/ricciobbello/mosaic-bot/images/original/download.jpeg')
 	t.show()
+	print(t.image)

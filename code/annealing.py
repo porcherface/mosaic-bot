@@ -12,7 +12,7 @@ from math import exp
 
 
 if __name__ == "__main__":
-	A = Target('/Users/saramilone/ricciobbello/mosaic-bot/images/original/download.jpeg',3,3)
+	A = Target('/Users/saramilone/ricciobbello/mosaic-bot/images/targets/board.jpeg',16,16)
 	x = Bucket('/Users/saramilone/ricciobbello/mosaic-bot/images/edited', A.size)
 
 	Smin = Similarity(A.matrix,x.vector)
@@ -23,6 +23,8 @@ if __name__ == "__main__":
 	TMAX = 1000000
 	beta = 0.001
 	beta_incr = 1.00001
+
+
 
 	while t < TMAX :
 		x1 = x.swap()

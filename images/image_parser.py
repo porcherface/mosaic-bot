@@ -12,8 +12,7 @@ dest_fld = "edited/"
 # for an easy parsing lib
 import glob
 # for an easy data acquisition
-from PIL import Image, ImageEnhance
-
+from PIL import Image
 # get all images in a list
 
 # for each image 
@@ -27,7 +26,7 @@ for image in glob.glob(src_fld):
 	# open the img
 	preview = Image.open(image)
 	#preview.show()
-
+	print(preview)
 	# make it black/white
 	preview = preview.convert("L")
 	#preview.show()

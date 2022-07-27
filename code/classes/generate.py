@@ -10,6 +10,10 @@ class Generate:
 		self.target = targ
 		self.bucket = buck
 
+		
+
+
+
 if __name__ == "__main__":
 	t = Target('/Users/saramilone/ricciobbello/mosaic-bot/images/original/download.jpeg')
 	b = Bucket('/Users/saramilone/ricciobbello/mosaic-bot/images/edited')

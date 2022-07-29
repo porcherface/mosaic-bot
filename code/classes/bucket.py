@@ -5,6 +5,7 @@ import numpy
 from .picsel import Picsel
 import glob
 from random import randrange
+from copy import deepcopy, copy
 
 class Bucket:
 
@@ -23,7 +24,9 @@ class Bucket:
 			self.cap = self.count
 
 	def swap(self):
-		out = self
+		out = deepcopy(self)
+		#out = self
+		#out = copy(self)
 
 		i1 = randrange(self.count)                    
 		i2 = randrange(self. cap)
@@ -39,15 +42,28 @@ class Bucket:
 
 		return out
 
+	def get_size(self):
+		self.size = self.picsel_list[0].get_size()
+		return self.size
+
+'''	def to_matrix(self):
+		self.matrix = numpy.array(
+'''
 
 if __name__ == "__main__":
 
-	b = Bucket('/Users/saramilone/ricciobbello/mosaic-bot/images/edited')
+	b = Bucket('/Users/saramilone/ricciobbello/mosaic-bot/images/edited',3)
 	
 	print(b.picsel_list)
 	print(b.count)
 	print(b.vector)
+
 	b1= b.swap()
+	
+	print(b.picsel_list)
+	print(b.count)
+	print(b.vector)
+
 	print(b1.picsel_list)
 	print(b1.count)
 	print(b1.vector)

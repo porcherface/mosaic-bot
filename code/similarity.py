@@ -8,6 +8,8 @@
 from classes.bucket import Bucket
 from classes.target import Target
 
+# NORMALIZATION = 1 / 255 / 255
+NORMALIZATION = 1
 
 def Similarity(A, x):
 	out = 0
@@ -17,13 +19,14 @@ def Similarity(A, x):
 			out = out + (item - x[index])*(item - x[index])	
 			index = index + 1
 
-	return out / index
+	return out / index* NORMALIZATION
 
 
 if __name__ == "__main__":
 	A = Target('/Users/saramilone/ricciobbello/mosaic-bot/images/original/download.jpeg',3,3)
 	x = Bucket('/Users/saramilone/ricciobbello/mosaic-bot/images/edited', A.size)
-
+	print(A.matrix)
+	print(x.vector)
 	S = Similarity(A.matrix,x.vector)
 	
 	print(S)

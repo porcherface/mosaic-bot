@@ -1,8 +1,6 @@
 # image_parser.py
-file_type = "stupid_script"
-# some run params 
 
-RES_X = 300
+RES_X = 200
 RES_Y = 200
 
 src_fld  = "original/*.png"
@@ -50,7 +48,7 @@ for image in glob.glob(src_fld):
 
 	# give an unique incremental index 	
 	# name new file and save in dest folder
-	newname = str(index).zfill(3)+"_"+str(int(mean))+"_.png"
+	newname = str(index).zfill(5)+"_"+str(int(mean))+"_.png"
 	print("converting "+filename+" to "+newname)
 	preview.save(dest_fld+newname)
 	index = index + 1

@@ -23,24 +23,25 @@ class Bucket:
 		if cap == None:
 			self.cap = self.count
 
-	def swap(self):
-		out = deepcopy(self)
+	def propose(self):
+		#out = deepcopy(self)
 		#out = self
 		#out = copy(self)
 
-		i1 = randrange(self.count)                    
-		i2 = randrange(self. cap)
+		self.i1 = randrange(self.count)                    
+		self.i2 = randrange(self. cap)
+	
 
-		v1 = self.picsel_list[i1]
-		v2 = self.picsel_list[i2]
-		out.picsel_list[i1] = v2
-		out.picsel_list[i2] = v1
-		v1 = self.vector[i1]
-		v2 = self.vector[i2]
-		out.vector[i1] = v2
-		out.vector[i2] = v1
+	def swap(self):
+		v1 = self.picsel_list[self.i1]
+		v2 = self.picsel_list[self.i2]
+		out.picsel_list[self.i1] = v2
+		out.picsel_list[self.i2] = v1
+		v1 = self.vector[self.i1]
+		v2 = self.vector[self.i2]
+		out.vector[self.i1] = v2
+		out.vector[self.i2] = v1
 
-		return out
 
 	def get_size(self):
 		self.size = self.picsel_list[0].get_size()

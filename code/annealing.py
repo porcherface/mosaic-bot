@@ -28,8 +28,12 @@ if __name__ == "__main__":
 
 
 	while t < TMAX :
-		x1 = x.swap()
-		s1 = Similarity(A.matrix,x1.vector)
+		x.propose()
+
+		indexes = (x.i1, x.i2)
+		deltas = Delta(A.matrix,x1.vector, indexes)
+		
+		s1 = s+deltas
 
 		if t%(TMAX/100)==0:
 			print(str(int(t/TMAX*100))+r"% complete (beta= "+str(beta)+",    s= "+str(s1)+",    smin= "+str(Smin)+")")
@@ -45,12 +49,14 @@ if __name__ == "__main__":
 		if s1 < s:
 			accept = True
 		# to avoid unnecessary exp calculations
-		elif exp( - beta * (s1-s))> random():
+		elif exp( - beta * deltas)> random():
 			accept = True
 
 		if accept == True:
 			x = x1
 			s = s1
+			x.swap()
+
 		t = t + 1
 		beta = beta*beta_incr
 

@@ -21,6 +21,7 @@ def Similarity(A, x):
 
 	return out / index* NORMALIZATION
 
+def Delta(A, x, i1, i2):
 
 if __name__ == "__main__":
 	A = Target('/Users/saramilone/ricciobbello/mosaic-bot/images/original/download.jpeg',3,3)

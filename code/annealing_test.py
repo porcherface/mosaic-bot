@@ -12,15 +12,15 @@ from math import exp
 
 
 if __name__ == "__main__":
-	A = Target('/Users/saramilone/ricciobbello/mosaic-bot/images/targets/gradient.jpg',5,5)
-	x = Bucket('/Users/saramilone/ricciobbello/mosaic-bot/images/edited', A.size)
+	A = Target('/Users/saramilone/ricciobbello/mosaic-bot/images/targets/gradient.jpg',20,20)
+	x = Bucket('/Users/saramilone/ricciobbello/mosaic-bot/images/fakes', A.size)
 
 	Smin = Similarity(A.matrix,x.vector)
 	s = Smin
 	xmin = x
 
 	t = 0
-	TMAX = 5000000
+	TMAX = 1000000
 	#TMAX = 1000
 	beta = 0.0001
 	beta_incr = 1.00001

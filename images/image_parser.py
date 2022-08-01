@@ -41,6 +41,15 @@ for image in glob.glob(src_fld):
 			total += preview.getpixel((i,j))
 
 	mean = total / (width * height)
+
+	for i in range(0, width):
+		for j in range(0, height):
+			this  = preview.getpixel((i,j))
+			total += (this - mean)*(this - mean)
+
+	variance = total / (width * height)
+
+	
 	# - average pixel
 	# - pixel variance? 
 	# - rescaled pixel block?
@@ -48,7 +57,7 @@ for image in glob.glob(src_fld):
 
 	# give an unique incremental index 	
 	# name new file and save in dest folder
-	newname = str(index).zfill(5)+"_"+str(int(mean))+"_.png"
+	newname = str(index).zfill(5)+"_"+str(int(mean)).zfill(5)+"_"+str(int(variance)).zfill(5)+"_.png"
 	print("converting "+filename+" to "+newname)
 	preview.save(dest_fld+newname)
 	index = index + 1

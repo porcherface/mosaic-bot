@@ -5,17 +5,22 @@
 from classes.bucket import Bucket
 from classes.target import Target
 from classes.generate import Generate
-from similarity import Similarity
+from similarity import Similarity, Delta
 from random import random
 from math import exp
 
 
 
 if __name__ == "__main__":
-	A = Target('/Users/saramilone/ricciobbello/mosaic-bot/images/targets/gradient.jpg',5,5)
-	x = Bucket('/Users/saramilone/ricciobbello/mosaic-bot/images/edited', A.size)
 
-	Smin = Similarity(A.matrix,x.vector)
+	nrow = 20
+	ncol = nrow
+
+
+	A = Target('/Users/saramilone/ricciobbello/mosaic-bot/images/targets/awanis.png',nrow,ncol)
+	x = Bucket('/Users/saramilone/ricciobbello/mosaic-bot/images/fakes', A.size)
+
+	Smin = Similarity(A.matrix,x.vector, nrow, ncol)
 	s = Smin
 	xmin = x
 
@@ -23,7 +28,7 @@ if __name__ == "__main__":
 	TMAX = 5000000
 	#TMAX = 1000
 	beta = 0.0001
-	beta_incr = 1.00001
+	beta_incr = 1.000001
 
 
 
@@ -31,17 +36,21 @@ if __name__ == "__main__":
 		x.propose()
 
 		indexes = (x.i1, x.i2)
-		deltas = Delta(A.matrix,x1.vector, indexes)
-		
+
+		#for now this works only with nrow = ncol, easy to implement the more general tho
+
+
+		deltas = Delta(A.matrix,x.vector, indexes, nrow, ncol)
+
 		s1 = s+deltas
 
 		if t%(TMAX/100)==0:
-			print(str(int(t/TMAX*100))+r"% complete (beta= "+str(beta)+",    s= "+str(s1)+",    smin= "+str(Smin)+")")
+			print(str(int(t/TMAX*100))+r"% complete (beta= "+str(beta)+",    deltas= "+str(deltas)+",    smin= "+str(Smin)+")")
 		
 
 		# record best		
 		if s1 < Smin:
-			xmin = x1
+			xmin = x
 			Smin = s1
 		
 		# accept swap 
@@ -53,7 +62,6 @@ if __name__ == "__main__":
 			accept = True
 
 		if accept == True:
-			x = x1
 			s = s1
 			x.swap()
 

@@ -11,6 +11,7 @@ class Picsel:
 			self.name = ""
 			self.index = -1
 			self.pixel = -1
+			self.variance = -1
 			return
 
 		self.name = filename.split("/")[-1]
@@ -19,7 +20,7 @@ class Picsel:
 		
 		self.index = int(splitted[0])
 		self.pixel = int(splitted[1])
-
+		self.variance = int(splitted[2])
 
 	def get_size(self):
 		self.size = Image.open(self.filename).size

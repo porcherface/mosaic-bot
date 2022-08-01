@@ -12,7 +12,7 @@ from PIL import Image
 
 # for each image 
 index = 0
-MAX = 4000
+MAX = 5000
 while index < MAX:
 	
 	THIS = int( 255*random.random() )
@@ -28,6 +28,6 @@ while index < MAX:
 
 	# give an unique incremental index 	
 	# name new file and save in dest folder
-	newname = str(index).zfill(5)+"_"+str(int(THIS))+"_.png"
+	newname = str(index).zfill(5)+"_"+str(int(THIS)).zfill(5)+"_"+str(int(0)).zfill(5)+"_.png"
 	new.save(dest_fld+newname)
 	index = index + 1

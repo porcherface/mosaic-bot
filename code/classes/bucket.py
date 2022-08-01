@@ -28,19 +28,19 @@ class Bucket:
 		#out = self
 		#out = copy(self)
 
-		self.i1 = randrange(self.count)                    
-		self.i2 = randrange(self. cap)
+		self.i1 = randrange(self.cap)                    
+		self.i2 = randrange(self. count)
 	
 
 	def swap(self):
 		v1 = self.picsel_list[self.i1]
 		v2 = self.picsel_list[self.i2]
-		out.picsel_list[self.i1] = v2
-		out.picsel_list[self.i2] = v1
+		self.picsel_list[self.i1] = v2
+		self.picsel_list[self.i2] = v1
 		v1 = self.vector[self.i1]
 		v2 = self.vector[self.i2]
-		out.vector[self.i1] = v2
-		out.vector[self.i2] = v1
+		self.vector[self.i1] = v2
+		self.vector[self.i2] = v1
 
 
 	def get_size(self):

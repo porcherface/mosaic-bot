@@ -14,6 +14,13 @@ class Target:
 		self.size = res_y*res_x
 		self.resized = 	self.image.resize((res_x,res_y))
 		self.matrix = numpy.asarray(self.resized.convert('L'))
+	
+	def get_variance_matrix(self):
+		pass
+
+
+
+
 	def show(self):
 		self.image.show()
 		self.resized.show()

@@ -3,8 +3,8 @@
 RES_X = 200
 RES_Y = 200
 
-src_fld  = "original/*.png"
-dest_fld = "edited/"
+src_fld  = "drow_ranger/*.*"
+dest_fld = "drow_ranger_edit/"
 
 
 # for an easy parsing lib

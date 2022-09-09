@@ -11,3 +11,4 @@ here an example using the dota2 hero drow ranger.
 the bucket is a preformatted set of random picture scraped from google images with query "drow ranger dota2". 
 the target is a drow ranger picture.
 
+<img src="out_drow.png" width="400"/>

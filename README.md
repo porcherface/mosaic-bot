@@ -8,7 +8,7 @@ to launch:
  
 
 here an example using the dota2 hero drow ranger.
-the bucket is a preformatted set of random picture scraped from google images with query "drow ranger dota2". 
+the bucket is a preformatted set of random pictures ddowloaded from google images with query "drow ranger dota2". 
 the target is a drow ranger picture.
 
     python3 mosaic-bot.py images/targets/drow_portrait.jpeg images/drow_ranger_edit/

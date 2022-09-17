@@ -10,8 +10,8 @@ __pycache__/
 
 
 # most edited files end like this
-*_.png
-*.png
+#*_.png
+#*.png
 
 
 # C extensions

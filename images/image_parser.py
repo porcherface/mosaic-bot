@@ -3,9 +3,10 @@
 RES_X = 200
 RES_Y = 200
 
-src_fld  = "drow_ranger/*.*"
-dest_fld = "drow_ranger_edit/"
-
+src_fld  = "lots_of_monkeys/*.*"
+dest_fld = "lots_of_monkeys_edit/"
+# for a single sqrt funciton
+import math
 
 # for an easy parsing lib
 import glob
@@ -47,7 +48,7 @@ for image in glob.glob(src_fld):
 			this  = preview.getpixel((i,j))
 			total += (this - mean)*(this - mean)
 
-	variance = total / (width * height)
+	variance = math.sqrt(total / (width * height))
 
 	
 	# - average pixel

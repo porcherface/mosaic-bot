@@ -12,7 +12,8 @@ must be same size, and size must be known to program. must be black and white, m
 there are two uploaded buckets in the repo:
 - 1200 drow ranger pics
 - 2500 chimps pics
-
+- 7500 dota heroes pics
+- 
 you can generate a bucket using image_parser.py 
 
 here an example using the dota2 hero drow ranger.
@@ -36,3 +37,7 @@ it is possible that the program executes with no errors if you break this law, b
 
 
 BUT) i made a fast script to process a scraped set of pics (color, different sizes) and return processed images with correct naming convention. check images/image_parser.py
+
+
+# LICENSE
+these files are under MIT license, you can use them only if you are not goin to make an income with em

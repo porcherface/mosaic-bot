@@ -29,10 +29,10 @@ all the assets are in the repo, you can run it by yourself
 
 as mentioned above: if you want to run the code with your set of images you need to know two things:
 
-1) at the current state (0.0.1-prealpha-hobby) this program on accepts same-size black and white pictures
+1) at the current state (0.0.1-prealpha-hobby) this program only accepts same-size black and white pictures
 it is possible that the program executes with no errors if you break this law, but the result is not guaranteed
 
 2) all images must have a naming convention, you can't possibly do it manually, check the images folder!!
 
 
-BUT) i made a fast script to process a scaped set of pics (color, different sizes) and return processed images with correct naming convention. check images/image_parser.py
+BUT) i made a fast script to process a scraped set of pics (color, different sizes) and return processed images with correct naming convention. check images/image_parser.py

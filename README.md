@@ -16,7 +16,7 @@ there are two uploaded buckets in the repo:
 you can generate a bucket using image_parser.py 
 
 here an example using the dota2 hero drow ranger.
-the bucket is a preformatted set of random pictures ddowloaded from google images with query "drow ranger dota2". 
+the bucket is the drow-ranger_edit bucket, generated scraping drow ranger from google images and parsed by image parser. 
 the target is a drow ranger picture. scraped pics are not filtered, there might be completely unrelated photos or doubles inside.
 
     python3 mosaic-bot.py images/targets/drow_portrait.jpeg images/drow_ranger_edit/
